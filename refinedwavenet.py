@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 
 
 # Load Data
-train_df = pd.read_csv('/content/data/train.csv')
-test_df = pd.read_csv('/content/data/test.csv')
-labels_df = pd.read_csv('/content/data/test_label.csv')
+train_df = pd.read_csv('/train.csv')
+test_df = pd.read_csv('/test.csv')
+labels_df = pd.read_csv('/test_label.csv')
 
 # Normalize using training statistics
 mean, std = train_df['TOTALDEMAND'].mean(), train_df['TOTALDEMAND'].std()
