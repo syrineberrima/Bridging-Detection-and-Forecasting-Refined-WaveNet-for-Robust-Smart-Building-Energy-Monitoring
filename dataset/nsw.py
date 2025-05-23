@@ -187,8 +187,8 @@ class SynthLoadAnomaly():
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Prepare data for anomaly detection model training and evaluation.")
-    parser.add_argument("--raw_data_root",        type=str,   default="C:/Users/syrin/OneDrive/Bureau/AEMO201124/VIC", help="Path to raw data root")
-    parser.add_argument("--trg_save_data",        type=str,   default="C:/Users/syrin/OneDrive/Bureau/AEMO201124/proc/VIC", help="Path to save processed data")
+    parser.add_argument("--raw_data_root",        type=str,   default="./raw/VIC", help="Path to raw data root")
+    parser.add_argument("--trg_save_data",        type=str,   default="/proc/VIC", help="Path to save processed data")
     parser.add_argument("--load_feature_name",    type=str,   default="TOTALDEMAND", help="Name of the load feature")
     parser.add_argument("--date_feature_name",    type=str,   default="SETTLEMENTDATE", help="Name of the date_time feature")
     parser.add_argument("--day_size",             type=int,   default=48, help="Size of a day")
@@ -199,7 +199,7 @@ def parse_args():
     parser.add_argument("--contam_clean_ratio",   type=float, default=0.7, help="Clean data save ratio (forcasting model is later evaluated on this clean data)")
     parser.add_argument("--ad_split_ratio",       type=float, default=0.7, help="Anomaly detection train-test split ratio")
     parser.add_argument("--seed",                 type=int,   default=0, help="Random seed")
-    parser.add_argument("--log_file",             type=str,   default="C:/Users/syrin/OneDrive/Bureau/resultsaemo/results.txt", help="Path of file to log to") # quantiles values are saved here to later scale back metrics to original values
+    parser.add_argument("--log_file",             type=str,   default="/results/results.txt", help="Path of file to log to") # quantiles values are saved here to later scale back metrics to original values
     args = parser.parse_args()
     return args
 
